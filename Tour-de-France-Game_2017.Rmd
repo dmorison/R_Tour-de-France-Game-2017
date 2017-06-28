@@ -13,18 +13,25 @@ library(knitr)
 library(kableExtra)
 library(DT)
 
+options(knitr.table.format = "html")
+
 setwd("C:/Users/davem/coding_2017/tourdefrance_game")
 updated <- Sys.Date()
+
+player_totals_df <- read.csv("players-leaderboard.csv")
+df_player_st_winners <- read.csv("player-st-winners.csv")
+df_players_results <- read.csv("players-stage-results.csv")
 ```
 
-Welcome to Tour de France Game 2017!
-
-## Including Plots
-
-You can also embed plots, for example:
+### Welcome to Tour de France Game 2017!
 
 ```{r}
+kable(player_totals_df) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = F)
 
+datatable(df_player_st_winners, options = list(pageLength = 5, sDom  = '<"top">lrt<"bottom">ip'))
+
+datatable(df_players_results, options = list(pageLength = 5, sDom  = '<"top">lrt<"bottom">ip'))
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
