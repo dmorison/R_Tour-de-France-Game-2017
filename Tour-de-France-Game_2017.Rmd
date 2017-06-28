@@ -14,6 +14,7 @@ library(kableExtra)
 library(DT)
 
 setwd("C:/Users/davem/coding_2017/tourdefrance_game")
+updated <- Sys.Date()
 ```
 
 Welcome to Tour de France Game 2017!
