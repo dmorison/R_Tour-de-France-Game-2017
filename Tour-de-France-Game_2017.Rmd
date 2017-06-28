@@ -1,0 +1,29 @@
+---
+title: "Tour de France Game 2017"
+author: "Dave Morison"
+date: "28 June 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(DT)
+
+setwd("C:/Users/davem/coding_2017/tourdefrance_game")
+```
+
+Welcome to Tour de France Game 2017!
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r}
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
