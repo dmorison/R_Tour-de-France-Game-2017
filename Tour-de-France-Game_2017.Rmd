@@ -2,7 +2,13 @@
 title: "Tour de France Game 2017"
 author: "Dave Morison"
 date: "28 June 2017"
-output: html_document
+output:
+  html_document:
+    self_contained: false
+    includes:
+      in_header: meta.html
+      before_body: header.html
+      after_body: footer.html
 ---
 
 ```{r setup, include=FALSE}
