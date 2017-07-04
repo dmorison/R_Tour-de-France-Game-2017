@@ -20,7 +20,7 @@ library(reshape2)
 
 options(knitr.table.format = "html")
 
-setwd("C:/Users/davem/coding_2017/tourdefrance_game")
+setwd("D:/Coding/R_Tour-de-France-Game-2017")
 updated <- Sys.Date()
 
 df_rider_name_results <- read.csv("rider-name-results.csv")
@@ -45,6 +45,7 @@ p1 <- ggplot(m_players_accum, aes(x = variable, y = value, group = Players)) +
 kable(df_rider_name_results) %>%
   kable_styling(bootstrap_options = c("striper", "hover", "responsive"))
 ```
+Note: The jersey wearers are the riders that physically wore the respective jersey on the stage. Not the rider who may have won the jersey on the stage - this rider will be wearing the jersey the following stage and then score the points.
 <br>
 
 ### Players stage winners:
