@@ -1,5 +1,2 @@
-"Stage","Stage_win","Team","Yellow","Green","Polka_dot","White","Aggressive"
-"Stage_4","rd124","FDJ","rd008","rd181","rd084","rd042","rd173"
-"Stage_3","rd131","BOR","rd008","rd181","rd086","rd093","rd211"
-"Stage_2","rd181","QUI","rd008","rd008",NA,"rd093",NA
-"Stage_1","rd008","SKY",NA,NA,NA,NA,NA
+Stage,Stage_win,Team,Yellow,Green,Polka_dot,White,Aggressive
+Stage_1,rd008,SKY,rd008,rd008,NA,rd093,NA
