@@ -1,6 +1,6 @@
-"Players","Stage_1"
-"Ben",6
-"Jayde",6
-"Storm",0
-"Stella",0
-"Dave",0
+"Players","Stage_1","Stage_2","Stage_3","Stage_4","Stage_5","Stage_6"
+"Ben",6,8,13,15,15,15
+"Jayde",6,8,13,15,17,19
+"Storm",0,4,6,7,7,10
+"Stella",0,0,3,3,5,7
+"Dave",0,1,1,1,4,7

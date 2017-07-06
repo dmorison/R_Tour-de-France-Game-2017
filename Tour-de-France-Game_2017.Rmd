@@ -20,7 +20,7 @@ library(reshape2)
 
 options(knitr.table.format = "html")
 
-setwd("D:/Coding/R_Tour-de-France-Game-2017")
+setwd("C:/Users/davem/coding_2017/tourdefrance_game")
 updated <- Sys.Date()
 
 df_rider_name_results <- read.csv("rider-name-results.csv")
