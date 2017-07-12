@@ -2,15 +2,15 @@ setwd("C:/Users/davem/coding_2017/tourdefrance_game")
 df_start_list <- read.csv("start-list_2017.csv")
 ### SECTION TO UPDATE - FOLLOW STEPS ###
 ### update stage with which the results are going to be for
-stage <- "Stage_6"
+stage <- "Stage_11"
 ### Look at previous stage general classification to determine who the jersey wearers were for the stage to update
-df_start_list[grep("Laen", df_start_list$Rider), ]
+df_start_list[grep("Bod", df_start_list$Rider), ]
 ### update stage rider name results: win, team, yellow, green, polka, white, red
-st_rider_name_results <- c("Marcel Kittel (Ger)", "Quick-Step Floors", "Chris Froome (GBr)", "Arnaud Demare (Fra)",
-                           "Fabio Aru (Ita)", "Simon Yates (GBr)", "Vegard Stake Laengen (Nor)")
+st_rider_name_results <- c("Marcel Kittel (Ger)", "Quick-Step Floors", "Chris Froome (GBr)", "Marcel Kittel (Ger)",
+                           "Warren Barguil (Fra)", "Simon Yates (GBr)", "Maciej Bodnar (Pol)")
 ### update stage rider code results: win, team, yellow, green, polka, white, red
-st_rider_code_results <- c("rd181", "QUI", "rd001", "rd124",
-                           "rd021", "rd201", "rd035")
+st_rider_code_results <- c("rd181", "QUI", "rd001", "rd181",
+                           "rd113", "rd201", "rd133")
 
 ########################################
 ### DO FIRST STAGE MANUALLY SO SKIP THIS STEP AND GO TO CALCULATION !!!
