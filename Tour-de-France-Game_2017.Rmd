@@ -29,6 +29,8 @@ df_player_st_winners <- read.csv("player-st-winners.csv")
 player_totals_df <- read.csv("players-leaderboard.csv")
 df_players_teams <- read.csv("players-teams.csv")
 players_stage_accum <- read.csv("players-accum-stage-results.csv")
+### ONLY INCLUDE BELOW FILE AT THE END OF TOUR FOR OVERALL FINISHING POINTS TABLE
+df_rider_name_overall <- read.csv("rider_name_overall.csv")
 
 m_players_accum <- melt(players_stage_accum, id.vars = "Players")
 p1 <- ggplot(m_players_accum, aes(x = variable, y = value, group = Players)) +
@@ -42,25 +44,45 @@ p1 <- ggplot(m_players_accum, aes(x = variable, y = value, group = Players)) +
 ### Stage results:
 
 ```{r, results="asis"}
-kable(df_rider_name_results) %>%
-  kable_styling(bootstrap_options = c("striper", "hover", "responsive"))
+datatable(df_rider_name_results,
+          rownames = FALSE,
+          options = list(pageLength = 5,
+                         dom = 'ftp'))
+# kable(df_rider_name_results) %>%
+#   kable_styling(bootstrap_options = c("striper", "hover", "responsive"))
 ```
-Note: The jersey wearers are the riders that physically wore the respective jersey on the stage. Not the rider who may have won the jersey on the stage - this rider will be wearing the jersey the following stage and then score the points.
+<br>
+<!-- ONLY INCLUDE THIS CHUNCK AT THE END OF THE TOUR FOR FINISHING POINTS TABLE -->
+
+### Final day rider points awards:
+
+```{r, results="asis"}
+kable(df_rider_name_overall) %>%
+  kable_styling(position = "left", bootstrap_options = c("striped", "hover", "responsive"), full_width = F)
+```
 <br>
 
 ### Players stage winners:
 
-```{r, results="asis"}
-kable(df_player_st_winners) %>%
-  kable_styling(position = "left", bootstrap_options = c("striper", "hover", "responsive"), full_width = F)
+```{r, out.width="50%", results="asis"}
+datatable(df_player_st_winners,
+          rownames = FALSE,
+          options = list(pageLength = 5,
+                         dom = 'tp'))
+# kable(df_player_st_winners) %>%
+#   kable_styling(position = "left", bootstrap_options = c("striper", "hover", "responsive"), full_width = F)
 ```
 <br>
 
 ### Players stage scores:
 
 ```{r, results="asis"}
-kable(df_players_results) %>%
-  kable_styling(position = "left", bootstrap_options = c("striper", "hover", "responsive"), full_width = F)
+datatable(df_players_results,
+          rownames = FALSE,
+          options = list(scrollX = TRUE,
+                         dom = 't'))
+# kable(df_players_results) %>%
+#   kable_styling(position = "left", bootstrap_options = c("striper", "hover", "responsive"), full_width = F)
 ```
 <br>
 
