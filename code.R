@@ -2,15 +2,15 @@ setwd("C:/Users/davem/coding_2017/tourdefrance_game")
 df_start_list <- read.csv("start-list_2017.csv")
 ### SECTION TO UPDATE - FOLLOW STEPS ###
 ### update stage with which the results are going to be for
-stage <- "Stage_21"
+stage <- "Stage_2"
 ### Lookup classifications for after the stage
-df_start_list[grep("Bar", df_start_list$Rider), ]
+df_start_list[grep("Ger", df_start_list$Rider), ]
 ### update stage rider name results: win, team, yellow, green, polka, white, red
-st_rider_name_results <- c("Dylan Groenewegen (Ned)", "LottoNL-Jumbo", "Chris Froome (GBr)", "Michael Matthews (Aus)",
-                           "Warren Barguil (Fra)", "Simon Yates (GBr)", "Warren Barguil (Fra)")
+st_rider_name_results <- c("Mark Cavendish (GBr)", "Dimension Data", "Richie Porte (Aus)", "Tony Martin (Ger)",
+                           "Andre Greipel (Ger)", "Simon Yates (GBr)", "Geraint Thomas (GBr)")
 ### update stage rider code results: win, team, yellow, green, polka, white, red
-st_rider_code_results <- c("rd054", "LTN", "rd001", "rd111",
-                           "rd113", "rd201", "rd113")
+st_rider_code_results <- c("rd101", "DIM", "rd091", "rd142",
+                           "rd161", "rd201", "rd008")
 
 ########################################
 ### DO FIRST STAGE MANUALLY SO SKIP THIS STEP AND GO TO CALCULATION !!!
@@ -128,7 +128,7 @@ df_players_teams <- read.csv("players-teams.csv")
 ### Complete start list of teams and riders
 df_start_list <- read.csv("start-list_2017.csv")
 ### First read in df_players table from above then create players stage results table in beginning
-players_stage_results <- data.frame(df_players$Player)
+players_stage_results <- data.frame(df_players$Players)
 colnames(players_stage_results) <- "Players"
 write.csv(players_stage_results, file = "players-stage-results.csv", row.names = FALSE)
 ### Initialise the players accumulative stage scores table (used for progress line chart)
@@ -141,14 +141,16 @@ player_st_winners <- data.frame(Stage = character(), Winning_player = character(
 write.csv(player_st_winners, file = "player-st-winners.csv", row.names = FALSE)
 
 ### Create initial df_rider_code_results table
+# remove row names after creation
 rider_code_results <- data.frame(Stage_win = factor(), Yellow = factor(), Green = factor(), Polka_dot = factor(),
                                  White = factor(), Agressive = factor(), Team = factor())
-write.csv(rider_code_results, file = "rider-code-results.csv", row.name = FALSE)
+write.csv(rider_code_results, file = "rider-code-results.csv")
 
 ### Create initial df_rider_name_results table
+# remove row names after creation
 rider_name_results <- data.frame(Stage_win = factor(), Yellow = factor(), Green = factor(), Polka_dot = factor(),
                                  White = factor(), Agressive = factor(), Team = factor())
-write.csv(rider_name_results, file = "rider-name-results.csv", row.name = FALSE)
+write.csv(rider_name_results, file = "rider-name-results.csv")
 #########################################
 
 
